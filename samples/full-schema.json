@@ -1,0 +1,315 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#article",
+            "isPartOf": {
+                "@id": "https://sallysbakingaddiction.com/master-muffin-mix/"
+            },
+            "author": {
+                "name": "Sally",
+                "@id": "https://sallysbakingaddiction.com/#/schema/person/3744271f85efc7e271411c4968f1c4ba"
+            },
+            "headline": "Master Bakery-Style Muffin Recipe",
+            "datePublished": "2014-02-18T12:23:05+00:00",
+            "dateModified": "2020-12-17T22:00:03+00:00",
+            "wordCount": 861,
+            "commentCount": 263,
+            "publisher": {
+                "@id": "https://sallysbakingaddiction.com/#organization"
+            },
+            "image": {
+                "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#primaryimage"
+            },
+            "thumbnailUrl": "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins.jpg",
+            "keywords": [
+                "all-purpose flour",
+                "butter",
+                "cinnamon",
+                "eggs",
+                "granulated sugar",
+                "milk",
+                "oil",
+                "sour cream",
+                "vanilla extract"
+            ],
+            "articleSection": [
+                "Breakfast",
+                "Muffins",
+                "Nut Free"
+            ],
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "CommentAction",
+                    "name": "Comment",
+                    "target": [
+                        "https://sallysbakingaddiction.com/master-muffin-mix/#respond"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://sallysbakingaddiction.com/master-muffin-mix/",
+            "url": "https://sallysbakingaddiction.com/master-muffin-mix/",
+            "name": "Master Bakery-Style Muffin Recipe - Sally&#039;s Baking Addiction",
+            "isPartOf": {
+                "@id": "https://sallysbakingaddiction.com/#website"
+            },
+            "primaryImageOfPage": {
+                "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#primaryimage"
+            },
+            "image": {
+                "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#primaryimage"
+            },
+            "thumbnailUrl": "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins.jpg",
+            "datePublished": "2014-02-18T12:23:05+00:00",
+            "dateModified": "2020-12-17T22:00:03+00:00",
+            "description": "This kitchen tested muffin batter creates extra large bakery style muffins with big muffin tops and dense, moist centers. Create plenty of flavors!",
+            "breadcrumb": {
+                "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "ReadAction",
+                    "target": [
+                        "https://sallysbakingaddiction.com/master-muffin-mix/"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#primaryimage",
+            "url": "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins.jpg",
+            "contentUrl": "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins.jpg",
+            "width": 1200,
+            "height": 1800,
+            "caption": "bakery style muffins including banana muffins and berry muffins"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://sallysbakingaddiction.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Recipes",
+                    "item": "https://sallysbakingaddiction.com/recipe-index/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Muffins",
+                    "item": "https://sallysbakingaddiction.com/category/muffins"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Master Bakery-Style Muffin Recipe"
+                }
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://sallysbakingaddiction.com/#website",
+            "url": "https://sallysbakingaddiction.com/",
+            "name": "Sally&#039;s Baking Addiction",
+            "description": "Trusted Recipes from a Self-Taught Baker",
+            "publisher": {
+                "@id": "https://sallysbakingaddiction.com/#organization"
+            },
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://sallysbakingaddiction.com/?s={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            ],
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "Organization",
+            "@id": "https://sallysbakingaddiction.com/#organization",
+            "name": "Sallys Baking Addiction",
+            "url": "https://sallysbakingaddiction.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "inLanguage": "en-US",
+                "@id": "https://sallysbakingaddiction.com/#/schema/logo/image/",
+                "url": "https://sallysbakingaddiction.com/wp-content/uploads/2022/01/android-chrome-512x512-1.png",
+                "contentUrl": "https://sallysbakingaddiction.com/wp-content/uploads/2022/01/android-chrome-512x512-1.png",
+                "width": 512,
+                "height": 512,
+                "caption": "Sallys Baking Addiction"
+            },
+            "image": {
+                "@id": "https://sallysbakingaddiction.com/#/schema/logo/image/"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://sallysbakingaddiction.com/#/schema/person/3744271f85efc7e271411c4968f1c4ba",
+            "name": "Sally",
+            "description": "Sally McKenney is a professional food photographer, cookbook author, and baker. Her kitchen-tested recipes and thorough step-by-step tutorials give readers the knowledge and confidence to bake from scratch. Sally has been featured on Good Morning America, HuffPost, Taste of Home, People and more.",
+            "sameAs": [
+                "https://sallysbakingaddiction.com/about/"
+            ]
+        },
+        {
+            "@context": "https://schema.org/",
+            "@type": "Recipe",
+            "name": "Master Bakery Style Muffin Recipe",
+            "description": "This kitchen tested muffin batter creates extra large bakery style muffins with big muffin tops and dense, moist centers. Create plenty of flavors using this as the base-- 1 muffin batter with endless options.",
+            "author": {
+                "@type": "Person",
+                "name": "Sally",
+                "url": "https://sallysbakingaddiction.com/about/"
+            },
+            "keywords": "jumbo muffins",
+            "image": [
+                "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins-225x225.jpg",
+                "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins-260x195.jpg",
+                "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins-320x180.jpg",
+                "https://sallysbakingaddiction.com/wp-content/uploads/2014/02/bakery-style-muffins.jpg"
+            ],
+            "url": "https://sallysbakingaddiction.com/master-muffin-mix/",
+            "recipeIngredient": [
+                "3 cups (375g) all-purpose flour (spooned &amp; leveled)",
+                "3 teaspoons baking powder",
+                "1/4 teaspoon baking soda",
+                "1/2 teaspoon salt",
+                "1 teaspoon ground cinnamon (optional)",
+                "1/3 cup (5 Tbsp; 71g) unsalted butter, melted and slightly cooled",
+                "1/3 cup (80ml) vegetable oil*",
+                "1 cup (200g) granulated sugar",
+                "2 large eggs, at room temperature",
+                "1/3 cup (80g) sour cream or yogurt, at room temperature*",
+                "1 cup (240ml) milk, at room temperature*",
+                "1 teaspoon pure vanilla extract",
+                "1-2 cups add-ins (see blog post above for suggestions)",
+                "optional: coarse sugar for sprinkling"
+            ],
+            "recipeInstructions": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Preheat oven to 425°F (218°C). Generously grease a 6-count jumbo muffin pan with butter or nonstick spray (nonstick spray recommended) or line with muffin liners. Set aside.",
+                    "url": "https://sallysbakingaddiction.com/master-muffin-mix/#instruction-step-1"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Whisk the flour, baking powder, baking soda, salt, and cinnamon (if using) together in a large bowl. Set aside.",
+                    "url": "https://sallysbakingaddiction.com/master-muffin-mix/#instruction-step-2"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Whisk the melted butter, oil, sugar, and eggs together until combined. Then whisk in the sour cream, milk, and vanilla extract. Mixture will be pale yellow. Pour wet ingredients into dry ingredients and fold together with a rubber spatula or wooden spoon until completely combined. Use a whisk to rid any large lumps of flour, if needed. Avoid overmixing. The batter will be thick. Fold in the add-in(s).",
+                    "url": "https://sallysbakingaddiction.com/master-muffin-mix/#instruction-step-3"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Divide batter between each muffin cup, filling all the way to the top. Sprinkle with coarse sugar (for added crunch, recommended!). Bake at 425°F for 5 minutes, then, keeping the muffins in the oven, reduce the oven temperature to 350°F (177°C) and continue to bake for 25-30 minutes or until the tops are lightly golden brown and centers are set. Stick a toothpick in the center of a muffin to test for doneness. If it comes out clean, the muffins are done.",
+                    "url": "https://sallysbakingaddiction.com/master-muffin-mix/#instruction-step-4"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Allow to cool for 10 minutes in pan before serving.",
+                    "url": "https://sallysbakingaddiction.com/master-muffin-mix/#instruction-step-5"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Cover leftover muffins and store at room temperature for 5 days or in the refrigerator for 1 week. Muffins freeze well for up to 3 months. Thaw in the refrigerator or on the counter.",
+                    "url": "https://sallysbakingaddiction.com/master-muffin-mix/#instruction-step-6"
+                }
+            ],
+            "prepTime": "PT15M",
+            "cookTime": "PT30M",
+            "totalTime": "PT45M",
+            "recipeYield": [
+                "6",
+                "6 jumbo muffins or 15 standard muffins"
+            ],
+            "recipeCategory": "Breakfast",
+            "cookingMethod": "Baking",
+            "recipeCuisine": "American",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "reviewCount": "44",
+                "ratingValue": "4.8"
+            },
+            "review": [
+                {
+                    "@type": "Review",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                    },
+                    "author": {
+                        "@type": "Person",
+                        "name": "Rosarie"
+                    },
+                    "datePublished": "2023-09-03",
+                    "reviewBody": "The chocolate chip muffin is the most requested one I make. Everyone loves them!  I have an applesauce raisin cake recipe from my old Better Homes &amp; Gardens cookbook that I would love to turn into muffins. Any suggestions?"
+                },
+                {
+                    "@type": "Review",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                    },
+                    "author": {
+                        "@type": "Person",
+                        "name": "Tracy H"
+                    },
+                    "datePublished": "2024-03-01",
+                    "reviewBody": "Fabulous Jumbo Muffins. I did lemon poppy seed. Will definitely try all the add ins. I should mention that I followed the recipe, only change was the add in: .5 tsp lemon extract, 1 tsp dried lemon rind &amp; 3 tbsp poppy seed."
+                },
+                {
+                    "@type": "Review",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                    },
+                    "author": {
+                        "@type": "Person",
+                        "name": "Debjyoti Chanda"
+                    },
+                    "datePublished": "2024-03-30",
+                    "reviewBody": "Managed to bake something so well for the first. Enjoyed the process of following your recipe, making it and tasting it!!"
+                },
+                {
+                    "@type": "Review",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                    },
+                    "author": {
+                        "@type": "Person",
+                        "name": "Rikkie"
+                    },
+                    "datePublished": "2024-05-20",
+                    "reviewBody": "Made this with my 4 year old! YUM! I used a high protein yogurt that we don’t like the taste of plain to up the protein content! Win win!"
+                }
+            ],
+            "datePublished": "2014-02-18",
+            "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#recipe",
+            "isPartOf": {
+                "@id": "https://sallysbakingaddiction.com/master-muffin-mix/#article"
+            },
+            "mainEntityOfPage": "https://sallysbakingaddiction.com/master-muffin-mix/"
+        }
+    ]
+}
