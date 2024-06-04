@@ -1,23 +1,36 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"os"
 	"github.com/unappendixed/recipetomd/schema"
 )
 
 func main() {
-	data, err := os.ReadFile("full-schema.json")
-    if err != nil {
-        panic(err)
-    }
-    
-    recipe, err := schema.ParseFromStructuredData(data)
+
+    flag.Parse()
+
+    url := flag.Arg(0)
+
+    jsonld, err := ScrapeUrl(url)
     if err != nil {
         panic(err)
     }
 
-    fmt.Println(recipe.ToMarkdown())
+    recipe, err := schema.ParseFromStructuredData([]byte(jsonld))
+    if err != nil {
+        panic(err)
+    }
+
+    if recipe.Url == "" {
+        recipe.Url = url
+    }
+
+    if *MarkdownFlavor {
+        fmt.Println(recipe.ToMarkdownLS())
+    } else {
+        fmt.Println(recipe.ToMarkdown())
+    }
 
 }
 
