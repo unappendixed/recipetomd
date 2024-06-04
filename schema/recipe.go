@@ -6,6 +6,7 @@ package schema
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 	"slices"
 )
 
@@ -94,7 +95,8 @@ func ParseFromStructuredData(in []byte) (*Recipe, error) {
 
 	err = json.Unmarshal(in, &graphMap)
 	if err != nil {
-		panic(err)
+		fmt.Println("Failed to parse structured data, exiting...")
+        os.Exit(1)
 	}
 
 	var rawRecipe json.RawMessage
@@ -119,7 +121,8 @@ func ParseFromSDList(in []byte) (*Recipe, error) {
 
 	err = json.Unmarshal(in, &entries)
 	if err != nil {
-		panic(err)
+		fmt.Println("Failed to parse structured data, exiting...")
+        os.Exit(1)
 	}
 
 	for i, v := range sd {

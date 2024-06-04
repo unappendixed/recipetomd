@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
+
 	"github.com/unappendixed/recipetomd/schema"
 )
 
@@ -14,13 +16,27 @@ func main() {
 
     jsonld, err := ScrapeUrl(url)
     if err != nil {
-        panic(err)
+        fmt.Println("Couldn't scrape webpage, exiting...")
+        os.Exit(1)
     }
 
-    recipe, err := schema.ParseFromStructuredData([]byte(jsonld))
-    if err != nil {
-        panic(err)
+    recipes := []schema.Recipe{}
+    for _, v := range jsonld {
+        recipe, err := schema.ParseFromStructuredData([]byte(v))
+        if err == nil {
+            recipes = append(recipes, *recipe)
+        }
     }
+
+    if len(recipes) == 0 {
+        fmt.Println("Couldn't find any structured recipe data!")
+    }
+
+    var recipe schema.Recipe
+    if len(recipes) >= 0 {
+        recipe = recipes[0]
+    }
+
 
     if recipe.Url == "" {
         recipe.Url = url
