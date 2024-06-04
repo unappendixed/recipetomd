@@ -13,6 +13,10 @@ func main() {
     flag.Parse()
 
     url := flag.Arg(0)
+    if url == "" {
+        fmt.Println("Missing url, exiting...")
+        os.Exit(1)
+    }
 
     jsonld, err := ScrapeUrl(url)
     if err != nil {
