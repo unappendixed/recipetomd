@@ -45,8 +45,51 @@ type Recipe struct {
 	Authors      RecipeAuthorList    `json:"author"`
 	Url          string              `json:"url"`
 	Ingredients  []RecipeIngredient  `json:"recipeIngredient"`
-	Instructions []RecipeInstruction `json:"recipeInstructions"`
+	Instructions RecipeHowToSection `json:"recipeInstructions"`
 }
+
+type RecipeHowToSection []RecipeInstruction
+
+func (htd *RecipeHowToSection) UnmarshalJSON(data []byte) error {
+
+    type wrappedInstructions struct {
+        Items []RecipeInstruction `json:"itemListElement"`
+    }
+
+    type manyWrappedInstructions []wrappedInstructions
+
+    manyWrapped := manyWrappedInstructions{}
+
+    err := json.Unmarshal(data, &manyWrapped)
+    if err == nil {
+        items := []RecipeInstruction{}
+        for _,v := range manyWrapped {
+            items = slices.Concat(items, v.Items)
+        }
+        *htd = items
+        return nil
+    }
+
+    wrapped := wrappedInstructions{}
+
+    err = json.Unmarshal(data, &wrapped)
+    if err == nil {
+        *htd = wrapped.Items
+        return nil
+    }
+
+    unwrapped := []RecipeInstruction{}
+    err = json.Unmarshal(data, &unwrapped)
+    if err == nil {
+        *htd = unwrapped
+        return nil
+    }
+
+    fmt.Printf("Failed to parse recipe: %s\n", err.Error())
+    os.Exit(1)
+    return nil
+}
+
 
 type RecipeIngredient string
 
