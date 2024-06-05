@@ -15,7 +15,7 @@ https://github.com/unappendixed/recipetomd/assets/38593737/2ce0a778-4fa3-469e-9a
 1. Install the [Go toolchain](https://go.dev)
 2. Run `go install https://github.com/unappendixed/recipetomd@latest`
 
-### Usage
+## Usage
 - Just execute `recipetomd <recipe-url>` to spit out markdown to stdout.
 - Redirect to a file:\
   `recipetomd <recipe-url> > recipe.md`
