@@ -34,6 +34,7 @@ func main() {
 
     if len(recipes) == 0 {
         fmt.Println("Couldn't find any structured recipe data!")
+        os.Exit(1)
     }
 
     var recipe schema.Recipe
