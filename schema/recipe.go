@@ -40,11 +40,11 @@ func (sta *SchemaTypeArray) UnmarshalJSON(data []byte) error {
 }
 
 type Recipe struct {
-	Name         string              `json:"name"`
-	Description  string              `json:"description"`
-	Authors      RecipeAuthorList    `json:"author"`
-	Url          string              `json:"url"`
-	Ingredients  []RecipeIngredient  `json:"recipeIngredient"`
+	Name         string             `json:"name"`
+	Description  string             `json:"description"`
+	Authors      RecipeAuthorList   `json:"author"`
+	Url          string             `json:"url"`
+	Ingredients  []RecipeIngredient `json:"recipeIngredient"`
 	Instructions RecipeHowToSection `json:"recipeInstructions"`
 }
 
@@ -52,44 +52,49 @@ type RecipeHowToSection []RecipeInstruction
 
 func (htd *RecipeHowToSection) UnmarshalJSON(data []byte) error {
 
-    type wrappedInstructions struct {
-        Items []RecipeInstruction `json:"itemListElement"`
-    }
+	type wrappedInstructions struct {
+		Items []RecipeInstruction `json:"itemListElement"`
+	}
 
-    type manyWrappedInstructions []wrappedInstructions
+	type manyWrappedInstructions []wrappedInstructions
 
-    manyWrapped := manyWrappedInstructions{}
+	unwrapped := []RecipeInstruction{}
+    err := json.Unmarshal(data, &unwrapped)
+	if err == nil && len(unwrapped) > 0 {
+		*htd = unwrapped
+		return nil
+	}
 
-    err := json.Unmarshal(data, &manyWrapped)
-    if err == nil {
-        items := []RecipeInstruction{}
-        for _,v := range manyWrapped {
-            items = slices.Concat(items, v.Items)
+	wrapped := wrappedInstructions{}
+
+	err = json.Unmarshal(data, &wrapped)
+	if err == nil && len(wrapped.Items) > 0 {
+		*htd = wrapped.Items
+		return nil
+	}
+
+	manyWrapped := manyWrappedInstructions{}
+
+	err = json.Unmarshal(data, &manyWrapped)
+	if err == nil && len(manyWrapped) > 0 {
+		items := []RecipeInstruction{}
+		for _, v := range manyWrapped {
+			items = slices.Concat(items, v.Items)
+		}
+        if len(items) == 0 {
+            fmt.Println("Failed to parse recipe instructions")
+            os.Exit(1)
         }
-        *htd = items
-        return nil
-    }
+		*htd = items
+		return nil
+	}
 
-    wrapped := wrappedInstructions{}
 
-    err = json.Unmarshal(data, &wrapped)
-    if err == nil {
-        *htd = wrapped.Items
-        return nil
-    }
 
-    unwrapped := []RecipeInstruction{}
-    err = json.Unmarshal(data, &unwrapped)
-    if err == nil {
-        *htd = unwrapped
-        return nil
-    }
-
-    fmt.Printf("Failed to parse recipe: %s\n", err.Error())
-    os.Exit(1)
-    return nil
+	fmt.Printf("Failed to parse recipe: %s\n", err.Error())
+	os.Exit(1)
+	return nil
 }
-
 
 type RecipeIngredient string
 
@@ -128,7 +133,7 @@ func ParseFromStructuredData(in []byte) (*Recipe, error) {
 	sd := StructuredData{}
 
 	err := json.Unmarshal(in, &sd)
-	if err != nil {
+	if err != nil || len(sd.Graph) == 0 {
 		return ParseFromSDList(in)
 	}
 
@@ -139,7 +144,7 @@ func ParseFromStructuredData(in []byte) (*Recipe, error) {
 	err = json.Unmarshal(in, &graphMap)
 	if err != nil {
 		fmt.Println("Failed to parse structured data, exiting...")
-        os.Exit(1)
+		os.Exit(1)
 	}
 
 	var rawRecipe json.RawMessage
@@ -165,7 +170,7 @@ func ParseFromSDList(in []byte) (*Recipe, error) {
 	err = json.Unmarshal(in, &entries)
 	if err != nil {
 		fmt.Println("Failed to parse structured data, exiting...")
-        os.Exit(1)
+		os.Exit(1)
 	}
 
 	for i, v := range sd {
