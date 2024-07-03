@@ -1,3 +1,7 @@
+// This package contains all the types necessary to represent most 
+// StructuredData recipes. Clients should typically only use the top-level
+// `Recipe` type alongside the `ParseFromStructuredData` and `ParseFromSDList`
+// creation functions.
 package schema
 
 // "@context": "https://schema.org/",
