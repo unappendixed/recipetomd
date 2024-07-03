@@ -9,7 +9,7 @@ import (
 func ScrapeUrl(url string) ([]string, error) {
 	c := colly.NewCollector()
 
-    schemas := []string{}
+	schemas := []string{}
 	c.OnHTML("script[type=\"application/ld+json\"]", func(h *colly.HTMLElement) {
 		if strings.Contains(h.Text, "schema.org") {
 			schemas = append(schemas, h.Text)
