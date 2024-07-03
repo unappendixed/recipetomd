@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/unappendixed/recipetomd/schema"
+	"github.com/unappendixed/recipetomd/pkg/schema"
 )
 
 func main() {
